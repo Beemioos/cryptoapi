@@ -12,7 +12,7 @@ const CryptoCurrencyCard = ({ currency }: CryptoCurrencyCardProps) => {
 				<div className='flex items-center gap-3'>
 					<img
 						src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${currency.id}.png`}
-						alt={`${currency.name} logo`} // улучшил alt для accessibility
+						alt={`${currency.name} logo`}
 						className='w-8'
 					/>
 					<p>{currency.name}</p>

@@ -1,18 +1,16 @@
 import { Menu, Spin } from 'antd'
-import type { MenuProps } from 'antd' // импортируем типы из antd
+import type { MenuProps } from 'antd' 
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import CryptoCurrencyCard from './components/CryptoCurrencyCard'
 import type { Cryptocurrency, MenuItem } from './types/cryptocurrency'
 
 const App = () => {
-  // Типизация состояния
   const [currencies, setCurrencies] = useState<MenuItem[]>([])
   const [currency, setCurrency] = useState<Cryptocurrency | null>(null)
   const [currencyId, setCurrencyId] = useState<number>(1)
 
   useEffect(() => {
-    // Типизация ответа от API
     axios
       .get<Cryptocurrency[]>('http://127.0.0.1:8000/cryptocurrencies')
       .then(r => {
